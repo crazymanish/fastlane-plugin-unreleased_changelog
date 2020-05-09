@@ -136,7 +136,7 @@ You have to **remember to keep your Changelog.yml up-to-date** with whatever fea
 ``` ruby
 desc "Upload a iOS beta build to Testflight with changelog."
 lane :beta do
-  ensure_unreleased_changelog	# Making sure about changelog
+  ensure_unreleased_changelog	# Making sure changelog exist!
   
   gym # Build the app and create .ipa file
   
@@ -148,10 +148,10 @@ lane :beta do
   git_tag_name = "#{version_number}-#{build_number}-beta-release"
   
   stamp_unreleased_changelog(tag: git_tag_name) # Stamp Unreleased section
-  git_commit(path: ".", message: "#{git_tag_name} Beta release") # Commit `Changelog.yml` file
+  git_commit(path: ".", message: "#{git_tag_name} Beta release") # git commit `Changelog.yml` file
   
   add_git_tag(tag: git_tag_name)  # Add git tag
-  push_to_git_remote # Push to git remote 
+  push_to_git_remote # Push `Changelog.yml` file and git-tag to remote 
   
   slack(message: "Hi team, we have a new beta build #{git_tag_name}, which includes the following: #{changelog}") # share on Slack
 end
