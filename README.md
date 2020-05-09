@@ -29,7 +29,7 @@ Unreleased:
   - removed deprecated feature XYZ
   Fixed:
   - bug-fix 3
-0.1.0-Release:
+[0.1.0-Release] - 2020-04-30:
   Added:
   - added new feature 1
   - added new feature 2
@@ -51,7 +51,7 @@ ensure_unreleased_changelog	# Raises an exception if Unreleased section is empty
 
 ``` ruby
 ensure_unreleased_changelog(
-  file_name: 'custom_changelog_file_name',	# Specify the YML changelog file name
+  file_name: 'custom_changelog_file_name',	# Specify the custom YML changelog file name (dafault `changelog`)
   show_diff: false	# Show the `Unreleased` section changelog, if found. (dafault true)
 )
 ```
@@ -77,7 +77,7 @@ add_unreleased_changelog(
 add_unreleased_changelog(
   entry: "bug-fix 1", # New changelog entry for `Unreleased` section
   type: "Fixed",  # Add new changelog entry inside `Fixed` _subsections_
-  file_name: 'custom_changelog_file_name'	# Specify the YML changelog file name
+  file_name: 'custom_changelog_file_name'	# Specify the custom YML changelog file name (dafault `changelog`)
 )	
 ```
 
