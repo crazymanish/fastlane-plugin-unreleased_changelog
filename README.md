@@ -15,7 +15,7 @@ A fastlane plugin to manage unreleased changelog using a YML file. 🚀
 
 This plugin is inspired by and based on [Keep a CHANGELOG](http://keepachangelog.com/) project. [Keep a CHANGELOG](http://keepachangelog.com/) proposes a standardised format for keeping change log of your project repository in `Changelog.yml` file. This file contains a curated, chronologically ordered list of notable changes for each version of a project in human readable format.
 
-Since [Keep a CHANGELOG](http://keepachangelog.com/) project proposes a well-defined structure with _sections_ (e.g.: `[Unreleased]`, `[0.3.0]`) and _subsections_ (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`) it opens up an opportunity to automate reading from/writing to `Changelog.yml` with [`fastlane`](https://fastlane.tools). 
+Since [Keep a CHANGELOG](http://keepachangelog.com/) project proposes a well-defined structure with _sections_ (e.g.: `[Unreleased]`, `[0.1.0]`) and _subsections_ (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`) it opens up an opportunity to automate reading from/writing to `Changelog.yml` with [`fastlane`](https://fastlane.tools). 
 
 ## YML changlog file structure
 `Changelog.yml` file must follow structure proposed by [Keep a CHANGELOG](http://keepachangelog.com/) project. 
