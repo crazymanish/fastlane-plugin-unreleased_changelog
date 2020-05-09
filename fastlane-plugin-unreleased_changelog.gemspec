@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'manishrathi19902013@gmail.com'
 
   spec.summary       = 'A fastlane plugin to manage unreleased changelog using a YAML file. 🚀'
-  pec.homepage       = "https://github.com/crazymanish/fastlane-plugin-unreleased_changelog"
+  spec.homepage       = "https://github.com/crazymanish/fastlane-plugin-unreleased_changelog"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
