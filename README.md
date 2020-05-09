@@ -137,17 +137,23 @@ You have to **remember to keep your Changelog.yml up-to-date** with whatever fea
 desc "Upload a iOS beta build to Testflight with changelog."
 lane :beta do
   ensure_unreleased_changelog	# Making sure about changelog
-
-  version_number = get_version_number # Get build number
-  build_number = get_build_number # Get build number
+  
   gym # Build the app and create .ipa file
   
   changelog = get_unreleased_changelog # Get changelog
   pilot(changelog: changelog) # Upload beta build to TestFlight with changelog
   
-  stamp_unreleased_changelog(tag: "#{version_number}-#{build_number}") # Stamp Unreleased section
+  version_number = get_version_number # Get project version
+  build_number = get_build_number # Get build number
+  git_tag_name = "#{version_number}-#{build_number}-beta-release"
   
-  slack(message: "Hey team, we have a new beta build, which includes the following: #{changelog}") # share on Slack
+  stamp_unreleased_changelog(tag: git_tag_name) # Stamp Unreleased section
+  git_commit(path: ".", message: "#{git_tag_name} Beta release") # Commit `Changelog.yml` file
+  
+  add_git_tag(tag: git_tag_name)  # Add git tag
+  push_to_git_remote # Push to git remote 
+  
+  slack(message: "Hi team, we have a new beta build #{git_tag_name}, which includes the following: #{changelog}") # share on Slack
 end
 ```
 
