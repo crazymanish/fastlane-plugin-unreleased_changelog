@@ -1,4 +1,4 @@
-# unreleased_changelog plugin
+# unreleased_changelog _plugin_
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-unreleased_changelog)
 
@@ -11,7 +11,7 @@ fastlane add_plugin unreleased_changelog
 ```
 
 ## About unreleased_changelog
-A fastlane plugin to manage unreleased changelog using a YAML file. 🚀
+A fastlane plugin to manage unreleased changelog using a YML file. 🚀
 
 This plugin is inspired by and based on [Keep a CHANGELOG](http://keepachangelog.com/) project. [Keep a CHANGELOG](http://keepachangelog.com/) proposes a standardised format for keeping change log of your project repository in `Changelog.yml` file. This file contains a curated, chronologically ordered list of notable changes for each version of a project in human readable format.
 
@@ -77,6 +77,23 @@ add_unreleased_changelog(
 add_unreleased_changelog(
   entry: "bug-fix 1", # New changelog entry for `Unreleased` section
   type: "Fixed",  # Add new changelog entry inside `Fixed` _subsections_ (dafault `Added`)
+  file_name: 'custom_changelog_file_name'	# Specify the custom YML changelog file name (dafault `changelog`)
+)	
+```
+
+### ✂️ delete_unreleased_changelog
+
+Delete an entry from your `Unreleased` section of your project's `Changelog.yml` file. Very handly, if your `Changelog.yml` contains Project tickets i.e JIRA ticket(s) etc and you want to automatically delete some changelog entry based on JIRA ticket number. 
+
+``` ruby
+delete_unreleased_changelog(
+  entry: "some feature number" # Delete changelog entry from `Unreleased` section
+)	
+```
+
+``` ruby
+delete_unreleased_changelog(
+  entry: "bug-fix 1", # Delete changelog entry from `Unreleased` section
   file_name: 'custom_changelog_file_name'	# Specify the custom YML changelog file name (dafault `changelog`)
 )	
 ```
