@@ -41,7 +41,7 @@ Unreleased:
 ## Actions
 `fastlane-plugin-unreleased_changelog` consists of 5 actions enabling you to manipulate `Changelog.yml` from [`fastlane`](https://fastlane.tools).
 
-### 🕵🏻 ensure_unreleased_changelog
+### 🔎 ensure_unreleased_changelog
 
 Ensures the content of the `Unreleased` section from your project's `Changelog.yml` file. Raises an exception if `Unreleased` section found empty, **print** the `Unreleased` section changelog if found.
 
@@ -98,6 +98,19 @@ delete_unreleased_changelog(
 )	
 ```
 
+### 📮get_unreleased_changelog
+
+Get all the `Unreleased` section changelog of your project's `Changelog.yml` file. It will ruturn the Array for hash for `Unreleased` section's _subsections_ (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`). Based on your workflow you can do what-ever you want with `Unreleased` changelog. 💪🏻
+
+``` ruby
+get_unreleased_changelog
+```
+
+``` ruby
+get_unreleased_changelog(
+  file_name: 'custom_changelog_file_name'	# Specify the custom YML changelog file name (dafault `changelog`)
+)	
+```
 
 ## Example
 
