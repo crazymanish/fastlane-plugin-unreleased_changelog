@@ -43,10 +43,10 @@ Unreleased:
 
 ### 🕵🏻 ensure_unreleased_changelog
 
-Ensures the content of the `Unreleased` section from your project's `Changelog.yml` file. 
+Ensures the content of the `Unreleased` section from your project's `Changelog.yml` file. Raises an exception if `Unreleased` section found empty, **print** the `Unreleased` section changelog if found.
 
 ``` ruby
-ensure_unreleased_changelog	# Raises an exception if Unreleased section is empty
+ensure_unreleased_changelog	# Raises an exception if `Unreleased` section is empty
 ```
 
 ``` ruby
