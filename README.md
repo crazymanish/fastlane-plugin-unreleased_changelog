@@ -131,9 +131,25 @@ stamp_unreleased_changelog(
 
 ## Example
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+You have to **remember to keep your Changelog.yml up-to-date** with whatever features, bug fixes etc. your repo contains and let [`fastlane`](https://fastlane.tools) do the rest. 
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+``` ruby
+desc "Upload a iOS beta build to Testflight with changelog."
+lane :beta do
+  ensure_unreleased_changelog	# Making sure about changelog
+
+  version_number = get_version_number # Get build number
+  build_number = get_build_number # Get build number
+  gym # Build the app and create .ipa file
+  
+  changelog = get_unreleased_changelog # Get changelog
+  pilot(changelog: changelog) # Upload beta build to TestFlight with changelog
+  
+  stamp_unreleased_changelog(tag: "#{version_number}-#{build_number}") # Stamp Unreleased section
+  
+  slack(message: "Hey team, we have a new beta build, which includes the following: #{changelog}") # share on Slack
+end
+```
 
 ## Issues and Feedback
 
