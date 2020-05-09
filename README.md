@@ -69,14 +69,14 @@ add_unreleased_changelog(
 ``` ruby
 add_unreleased_changelog(
   entry: "bug-fix 1", # New changelog entry for `Unreleased` section
-  type: "Fixed"  # Add new changelog entry inside `Fixed` _subsections_
+  type: "Fixed"  # Add new changelog entry inside `Fixed` _subsections_ (dafault `Added`)
 )	
 ```
 
 ``` ruby
 add_unreleased_changelog(
   entry: "bug-fix 1", # New changelog entry for `Unreleased` section
-  type: "Fixed",  # Add new changelog entry inside `Fixed` _subsections_
+  type: "Fixed",  # Add new changelog entry inside `Fixed` _subsections_ (dafault `Added`)
   file_name: 'custom_changelog_file_name'	# Specify the custom YML changelog file name (dafault `changelog`)
 )	
 ```
