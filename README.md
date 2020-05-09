@@ -11,10 +11,31 @@ fastlane add_plugin unreleased_changelog
 ```
 
 ## About unreleased_changelog
-
 A fastlane plugin to manage unreleased changelog using a YAML file. 🚀
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+This plugin is inspired by and based on [Keep a CHANGELOG](http://keepachangelog.com/) project. [Keep a CHANGELOG](http://keepachangelog.com/) proposes a standardised format for keeping change log of your project repository in `Changelog.yml` file. This file contains a curated, chronologically ordered list of notable changes for each version of a project in human readable format.
+
+Since [Keep a CHANGELOG](http://keepachangelog.com/) project proposes a well-defined structure with _sections_ (e.g.: `[Unreleased]`, `[0.3.0]`) and _subsections_ (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`) it opens up an opportunity to automate reading from/writing to `Changelog.yml` with [`fastlane`](https://fastlane.tools). 
+
+## Actions
+`fastlane-plugin-changelog` consists of 5 actions enabling you to manipulate `Changelog.yml` from [`fastlane`](https://fastlane.tools).
+
+### 🕵🏻 ensure_unreleased_changelog
+
+Ensures the content of the `Unreleased` section from your project's `Changelog.yml` file. `Changelog.yml` must follow structure proposed by [Keep a CHANGELOG](http://keepachangelog.com/) project. 
+
+``` ruby
+ensure_unreleased_changelog	# Raises an exception if Unreleased section is empty
+```
+
+``` ruby
+ensure_unreleased_changelog(
+  file_name: 'custom_changelog_file_name',	# Specify the YML changelog file name
+  show_diff: false	# Show the `Unreleased` section changelog, if found. (dafault true)
+)
+```
+
+
 
 ## Example
 
