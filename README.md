@@ -18,7 +18,7 @@ This plugin is inspired by and based on [Keep a CHANGELOG](http://keepachangelog
 Since [Keep a CHANGELOG](http://keepachangelog.com/) project proposes a well-defined structure with _sections_ (e.g.: `[Unreleased]`, `[0.3.0]`) and _subsections_ (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`) it opens up an opportunity to automate reading from/writing to `Changelog.yml` with [`fastlane`](https://fastlane.tools). 
 
 ## Actions
-`fastlane-plugin-changelog` consists of 5 actions enabling you to manipulate `Changelog.yml` from [`fastlane`](https://fastlane.tools).
+`fastlane-plugin-unreleased_changelog` consists of 5 actions enabling you to manipulate `Changelog.yml` from [`fastlane`](https://fastlane.tools).
 
 ### 🕵🏻 ensure_unreleased_changelog
 
@@ -35,6 +35,30 @@ ensure_unreleased_changelog(
 )
 ```
 
+### 📝 add_unreleased_changelog
+
+Add a new entry inside your `Unreleased` section of your project's `Changelog.yml` file.
+
+``` ruby
+add_unreleased_changelog(
+  entry: "Some changelog entry" # Add new changelog entry inside `Unreleased` section's `Addded` _subsections_
+)	
+```
+
+``` ruby
+add_unreleased_changelog(
+  entry: "Some changelog entry", # New changelog entry for `Unreleased` section
+  type: "Fixed"  # Add new changelog entry inside `Fixed` _subsections_
+)	
+```
+
+``` ruby
+add_unreleased_changelog(
+  entry: "Some changelog entry", # New changelog entry for `Unreleased` section
+  type: "Fixed",  # Add new changelog entry inside `Fixed` _subsections_
+  file_name: 'custom_changelog_file_name'	# Specify the YML changelog file name
+)	
+```
 
 
 ## Example
