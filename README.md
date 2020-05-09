@@ -62,20 +62,20 @@ Add a new entry inside your `Unreleased` section of your project's `Changelog.ym
 
 ``` ruby
 add_unreleased_changelog(
-  entry: "Some changelog entry" # Add new changelog entry inside `Unreleased` section's `Addded` _subsections_
+  entry: "added new feature" # Add new changelog entry inside `Unreleased` section's `Addded` _subsections_
 )	
 ```
 
 ``` ruby
 add_unreleased_changelog(
-  entry: "Some changelog entry", # New changelog entry for `Unreleased` section
+  entry: "bug-fix 1", # New changelog entry for `Unreleased` section
   type: "Fixed"  # Add new changelog entry inside `Fixed` _subsections_
 )	
 ```
 
 ``` ruby
 add_unreleased_changelog(
-  entry: "Some changelog entry", # New changelog entry for `Unreleased` section
+  entry: "bug-fix 1", # New changelog entry for `Unreleased` section
   type: "Fixed",  # Add new changelog entry inside `Fixed` _subsections_
   file_name: 'custom_changelog_file_name'	# Specify the YML changelog file name
 )	
