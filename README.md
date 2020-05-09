@@ -17,12 +17,25 @@ This plugin is inspired by and based on [Keep a CHANGELOG](http://keepachangelog
 
 Since [Keep a CHANGELOG](http://keepachangelog.com/) project proposes a well-defined structure with _sections_ (e.g.: `[Unreleased]`, `[0.3.0]`) and _subsections_ (`Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`) it opens up an opportunity to automate reading from/writing to `Changelog.yml` with [`fastlane`](https://fastlane.tools). 
 
+## YML changlog file structure
+`Changelog.yml` file must follow structure proposed by [Keep a CHANGELOG](http://keepachangelog.com/) project. 
+
+```yml
+0.1.0-Release:
+  Added:
+  - added new feature 1
+  - added new feature 2
+  Fixed:
+  - bug-fix 1
+  - bug-fix 2
+```
+
 ## Actions
 `fastlane-plugin-unreleased_changelog` consists of 5 actions enabling you to manipulate `Changelog.yml` from [`fastlane`](https://fastlane.tools).
 
 ### 🕵🏻 ensure_unreleased_changelog
 
-Ensures the content of the `Unreleased` section from your project's `Changelog.yml` file. `Changelog.yml` must follow structure proposed by [Keep a CHANGELOG](http://keepachangelog.com/) project. 
+Ensures the content of the `Unreleased` section from your project's `Changelog.yml` file. 
 
 ``` ruby
 ensure_unreleased_changelog	# Raises an exception if Unreleased section is empty
