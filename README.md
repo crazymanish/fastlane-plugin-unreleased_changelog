@@ -21,6 +21,14 @@ Since [Keep a CHANGELOG](http://keepachangelog.com/) project proposes a well-def
 `Changelog.yml` file must follow structure proposed by [Keep a CHANGELOG](http://keepachangelog.com/) project. 
 
 ```yml
+Unreleased:
+  Added:
+  - added new feature 1.1
+  - added new feature 2.1
+  Removed:
+  - removed deprecated feature XYZ
+  Fixed:
+  - bug-fix 3
 0.1.0-Release:
   Added:
   - added new feature 1
