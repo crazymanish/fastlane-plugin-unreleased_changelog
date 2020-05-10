@@ -10,6 +10,11 @@ This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To 
 fastlane add_plugin unreleased_changelog
 ```
 
+If you are using fastlane using Gemfile in your project, add it to your project by running:
+```bash
+bundle exec fastlane add_plugin csv_translation 
+```
+
 ## About unreleased_changelog
 A fastlane plugin to manage unreleased changelog using a YML file. 🚀
 
