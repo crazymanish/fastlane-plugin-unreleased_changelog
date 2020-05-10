@@ -12,7 +12,7 @@ fastlane add_plugin unreleased_changelog
 
 If you are using fastlane using Gemfile in your project, add it to your project by running:
 ```bash
-bundle exec fastlane add_plugin csv_translation 
+bundle exec fastlane add_plugin unreleased_changelog 
 ```
 
 ## About unreleased_changelog
